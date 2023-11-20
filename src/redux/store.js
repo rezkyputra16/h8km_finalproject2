@@ -4,21 +4,22 @@ import storage from "redux-persist/lib/storage";
 import productShop from "./ProductsSlice";
 
 const reducers = combineReducers({
-    products: productShop,
+  products: productShop,
 });
 
 const persistConfig = {
-    key: "root",
-    storage,
+  key: "root",
+  storage,
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 const store = configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-        serializableCheck: false
-    })
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 const persistor = persistStore(store);
