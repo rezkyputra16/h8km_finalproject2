@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { auth } from "../../api";
 import styles from "./style.module.css";
@@ -62,23 +62,13 @@ const Login = () => {
   };
 
   return (
-    <>
-      <Header />
-      <SectionHeader title="Login" />
-      <Form
-        style={{
-          width: "100%",
-          margin: "2.5rem auto",
-          padding: "2rem" /* Menambahkan padding 2 rem */,
-          background: "#e0e0e0" /* Menambahkan warna latar belakang */,
-          border: "1px solid #a7a6a6",
-          borderRadius: "10px" /* Mengatur sudut elemen */,
-          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" /* Menambahkan shadow */,
-        }}
-        onSubmit={handleLogin}
-      >
+    <div className={styles.formContainer}>
+      <h2>Login Bukapedia</h2>
+      <Link to="/" style={{ margin: "30px 0px" }}>
+        Back to home
+      </Link>
+      <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label style={{ fontWeight: "bold" }}>Username</Form.Label>
           <Form.Control
             type="text"
             placeholder="Type your username..."
@@ -88,7 +78,6 @@ const Login = () => {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label style={{ fontWeight: "bold" }}>Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Type your password..."
@@ -97,23 +86,27 @@ const Login = () => {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className={styles.buttonLogin}>
           Login
         </Button>
         <div className={styles.default}>
           <div>
-            <span>Default User:</span>
-            <span>username = johnd</span>
-            <span>password = m38rmF$</span>
+            <h6>Default User:</h6>
+            <div className={styles.value}>
+              <span>username: johnd</span>
+              <span>password: m38rmF$</span>
+            </div>
           </div>
           <div>
-            <span>Default Admin:</span>
-            <span>username = admin@bukapedia.com</span>
-            <span>password = admin123</span>
+            <h6>Default Admin:</h6>
+            <div className={styles.value}>
+              <span>username: admin@bukapedia.com</span>
+              <span>password: admin123</span>
+            </div>
           </div>
         </div>
       </Form>
-    </>
+    </div>
   );
 };
 

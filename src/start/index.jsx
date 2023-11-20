@@ -1,12 +1,11 @@
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from "react-bootstrap/Carousel";
 
 function Start() {
   return (
-    <Carousel data-bs-theme="dark" style={{marginTop: "4rem"}}>
-      <Carousel.Item
-      >
+    <Carousel data-bs-theme="dark" style={{ marginTop: "4rem" }}>
+      <Carousel.Item>
         <img
-          style={{display: "center", width: "950px"}}
+          style={{ display: "center", width: "950px" }}
           src="https://markey.id/wp-content/uploads/2019/01/20190103.jpg"
           alt="First slide"
         />
@@ -19,7 +18,7 @@ function Start() {
         <img
           src="https://markey.id/wp-content/uploads/2019/01/20190103.jpg"
           alt="Second slide"
-          style={{display: "center", width: "950px"}}
+          style={{ display: "center", width: "950px" }}
         />
         <Carousel.Caption>
           <h5>Second slide label</h5>
@@ -28,7 +27,7 @@ function Start() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{display: "center", width: "950px"}}
+          style={{ display: "center", width: "950px" }}
           src="https://markey.id/wp-content/uploads/2019/01/20190103.jpg"
           alt="Third slide"
         />
