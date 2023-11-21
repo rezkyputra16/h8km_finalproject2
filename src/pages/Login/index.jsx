@@ -64,9 +64,7 @@ const Login = () => {
   return (
     <div className={styles.formContainer}>
       <h2>Login Bukapedia</h2>
-      <Link to="/" style={{ margin: "30px 0px" }}>
-        Back to home
-      </Link>
+      <Link to="/">Back to home</Link>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
