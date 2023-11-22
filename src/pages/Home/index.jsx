@@ -8,7 +8,6 @@ import ProductCards from "../../components/ProductCards";
 import SectionHeader from "../../components/SectionHeader";
 import Start from "../../start";
 
-
 const Home = () => {
   const products = useSelector((state) => state.products.products);
 
@@ -30,8 +29,8 @@ const Home = () => {
 
   return (
     <>
-      <Start />
       <Header />
+      <Start />
       <SectionHeader title="Products" />
       {products ? (
         <ProductCards data={products} />

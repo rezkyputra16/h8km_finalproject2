@@ -4,9 +4,9 @@ import SectionHeader from "../../components/SectionHeader";
 
 const Cart = () => {
   return (
-    <div style={{margin: "50px", minHeight: "100vh"}}>
+    <div>
       <Header />
-      <SectionHeader title="CART" />
+      {/* <SectionHeader title="CART" /> */}
       <CartTable headers={["", "Products", "Price", "Quantity", "Total", ""]} />
     </div>
   );

@@ -1,0 +1,51 @@
+.cartContainer {
+  margin: 3rem 0rem;
+}
+.cart {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  width: 100%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  border: 1px solid #eaeaea;
+  margin: 20px 0px;
+}
+.image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.cartBody {
+  width: 80%;
+  padding: 1rem;
+  text-align: left;
+}
+.cartBody p span {
+  background-color: royalblue;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.cartInput {
+  display: flex;
+  width: 100%;
+}
+.cartInput input {
+  width: 50%;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+}
+.cartInput button {
+  font-size: 10px;
+  margin-left: 10px;
+}
+@media screen and (max-width: 750px) {
+  .cart p {
+    font-size: 11px;
+  }
+  .cartBody p span {
+    font-size: 8px;
+  }
+}

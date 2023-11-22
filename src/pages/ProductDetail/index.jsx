@@ -8,27 +8,20 @@ import { addCart } from "../../redux/ProductsSlice";
 import { getProductDetail } from "../../api";
 import Header from "../../components/Header";
 import SectionHeader from "../../components/SectionHeader";
+import styles from "./detail.module.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
-
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
-
   const products = useSelector((state) => state.products.products);
-
   const [data, setData] = useState(null);
-
   const [quantity, setQuantity] = useState(1);
 
   const handleAdd = (e, data) => {
     e.preventDefault();
-
     const product = products.filter((item) => item.id === data.id)[0];
-
     const auth = JSON.parse(localStorage.getItem("auth"));
-
     if (!auth) {
       navigate("/login");
     } else {
@@ -66,35 +59,15 @@ const ProductDetail = () => {
       <Header />
       <SectionHeader title="Product Detail" />
       {data ? (
-        <Card
-          style={{
-            width: "90%",
-            margin: "2rem auto",
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <Card.Img
-            variant="top"
-            src={data.image}
-            style={{ width: "250px", height: "250px", margin: "2rem" }}
-          />
-          <Card.Body style={{ textAlign: "center", padding: "3rem" }}>
-            <Card.Title
-              style={{
-                marginBottom: "1.5rem",
-                paddingBottom: "1.5rem",
-                borderBottom: "1px solid gray",
-              }}
-            >
-              {data.title}
-            </Card.Title>
-            <Card.Subtitle>Category : {data.category}</Card.Subtitle>
+        <div className={styles.cardWraper}>
+          <img src={data.image} alt="" />
+          <div className={styles.card}>
+            <h5>{data.title}</h5>
+            <h6>Category : {data.category}</h6>
             <br />
-            <Card.Text>Price : ${data.price}</Card.Text>
-            <Card.Text>Rating : {data.rating.rate}</Card.Text>
-            <Card.Text>Description : </Card.Text>
-            <Card.Text>{data.description}</Card.Text>
+            <p>Price : ${data.price}</p>
+            <p>Rating : {data.rating.rate}</p>
+            <p>Description : {data.description}</p>
             <div
               style={{
                 display: "flex",
@@ -113,8 +86,8 @@ const ProductDetail = () => {
                 Add to Cart
               </Button>
             </div>
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       ) : (
         <InfinitySpin color="black" />
       )}

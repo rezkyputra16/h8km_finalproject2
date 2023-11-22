@@ -27,12 +27,14 @@ const Header = () => {
   };
 
   return (
-    <Navbar bg="light" variant="light" expand="lg" fixed="top">
-      <Navbar.Brand
-        as={Link}
-        to="/"
-        style={{ margin: "20px", display: "flex" }}
-      >
+    <Navbar
+      bg="light"
+      variant="light"
+      expand="lg"
+      fixed="top"
+      style={{ padding: "20px" }}
+    >
+      <Navbar.Brand as={Link} to="/">
         Bukapedia
       </Navbar.Brand>
 
